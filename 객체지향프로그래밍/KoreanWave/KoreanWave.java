@@ -10,7 +10,7 @@ public class KoreanWave {
         System.out.println("-------------------------");
         System.out.println("1. 한류의 어원");
         System.out.println("2. 음악에서의 한류");
-        System.out.println("3. 영화에서의 한류");
+        System.out.println("3. 드라마, 영화에서의 한류");
         System.out.println("4. 메모하기");
         System.out.println("5. 종료하기");
         System.out.println("-------------------------\n");

@@ -1,5 +1,6 @@
 package KoreanWave;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 public class Movie {
@@ -12,12 +13,16 @@ public class Movie {
             movie();
         } else if ("3".equals(str)) {
             KoreanWave.main(null);
+        } else {
+            throw new IOException("잘못된 항목입니다.");
         }
         
     }
 
     public static void movie() throws InterruptedException, Exception {
         Thread.sleep(1000);
+        Scanner scanner = new Scanner(System.in);
+        while (true) {
         System.out.println("드라마, 영화에서의 한류");
         System.out.println("-------------------------");
         System.out.println("1. 드라마, 영화에서의 한류");
@@ -25,9 +30,16 @@ public class Movie {
         System.out.println("3. 돌아가기");
         System.out.println("-------------------------\n");
         System.out.print(" 숫자을 입력하시오.");
-        Scanner scanner = new Scanner(System.in);
         String num = scanner.nextLine();
-        second_it(num);
+        try {
+            second_it(num);
+            break;
+        } catch (IOException e) {
+            System.out.println("항목이 존재하지 않거나 파일이 존재하지 않습니다.");
+            Thread.sleep(1000);
+        }
+    }
+
 
         
     }
